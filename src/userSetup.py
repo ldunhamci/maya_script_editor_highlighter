@@ -1,7 +1,10 @@
+import keyword
+
 from maya import OpenMayaUI
 import shiboken2
 from PySide2 import QtCore, QtGui, QtWidgets
 import logging
+
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -9,43 +12,7 @@ logger.setLevel(logging.INFO)
 
 # TODO : finish implementing python keyword highlighting in stack traces
 class PythonSyntaxRules(object):
-    keywords = [
-        "False",
-        "await",
-        "else",
-        "import",
-        "pass",
-        "None",
-        "break",
-        "except",
-        "in",
-        "raise",
-        "True",
-        "class",
-        "finally",
-        "is",
-        "return",
-        "and",
-        "continue",
-        "for",
-        "lambda",
-        "try",
-        "as",
-        "def",
-        "from",
-        "nonlocal",
-        "while",
-        "assert",
-        "del",
-        "global",
-        "not",
-        "with",
-        "async",
-        "elif",
-        "if",
-        "or",
-        "yield",
-    ]
+    keywords = list(keyword.kwlist)
 
     kOrange = QtGui.QColor(255, 80, 0)
 
