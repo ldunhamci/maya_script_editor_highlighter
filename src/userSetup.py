@@ -35,19 +35,19 @@ class StdOut_Syntax(QtGui.QSyntaxHighlighter):
     kGreen = QtGui.QColor(35, 170, 30)
     kBlue = QtGui.QColor(35, 160, 255)
 
-    rx_error = QtCore.QRegExp(r"[Ee][Rr][Rr][Oo][Rr]")
+    rx_error = QtCore.QRegExp(r"\berror\b", QtCore.Qt.CaseInsensitive)
     error_format = QtGui.QTextCharFormat()
     error_format.setForeground(kRed)
 
-    rx_warning = QtCore.QRegExp(r"[Ww][Aa][Rr][Nn][Ii][Nn][Gg]")
+    rx_warning = QtCore.QRegExp(r"\bwarning\b", QtCore.Qt.CaseInsensitive)
     warning_format = QtGui.QTextCharFormat()
     warning_format.setForeground(kOrange)
 
-    rx_debug = QtCore.QRegExp(r"[Dd][Ee][Bb][Uu][Gg]")
+    rx_debug = QtCore.QRegExp(r"\bdebug\b", QtCore.Qt.CaseInsensitive)
     debug_format = QtGui.QTextCharFormat()
     debug_format.setForeground(kGreen)
 
-    rx_traceback_start = QtCore.QRegExp("Traceback \(most recent call last\)")
+    rx_traceback_start = QtCore.QRegExp(r"Traceback \(most recent call last\)")
     traceback_format = QtGui.QTextCharFormat()
     traceback_format.setForeground(kBlue)
 
